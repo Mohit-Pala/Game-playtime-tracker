@@ -1,0 +1,13 @@
+main {
+  margin: 2rem;
+}
+
+mat-card {
+  background-color: black;
+  width: 100%;
+}
+
+button {
+  margin: 1rem;
+  width: 100%;
+}
