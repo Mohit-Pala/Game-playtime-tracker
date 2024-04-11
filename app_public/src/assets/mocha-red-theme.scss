@@ -1,0 +1,96 @@
+@use "@angular/material" as mat;
+
+$base-palette: (
+  50: #1e1e2e,
+  100: #1e1e2e,
+  200: #1e1e2e,
+  300: #1e1e2e,
+  400: #1e1e2e,
+  500: #1e1e2e,
+  600: #1e1e2e,
+  700: #1e1e2e,
+  800: #1e1e2e,
+  900: #1e1e2e,
+
+  contrast: (
+    50: #cdd6f4,
+    100: #cdd6f4,
+    200: #cdd6f4,
+    300: #cdd6f4,
+    400: #cdd6f4,
+    500: #cdd6f4,
+    600: #cdd6f4,
+    700: #cdd6f4,
+    800: #cdd6f4,
+    900: #cdd6f4
+  )
+);
+
+$surface-palette: (
+  50: #313244,
+  100: #313244,
+  200: #313244,
+  300: #313244,
+  400: #313244,
+  500: #313244,
+  600: #313244,
+  700: #313244,
+  800: #313244,
+  900: #313244,
+
+  contrast: (
+    50: #bac2de,
+    100: #bac2de,
+    200: #bac2de,
+    300: #bac2de,
+    400: #bac2de,
+    500: #bac2de,
+    600: #bac2de,
+    700: #bac2de,
+    800: #bac2de,
+    900: #bac2de
+  )
+);
+
+$base-accent-palette: (
+  50: #f38ba8,
+  100: #f38ba8,
+  200: #f38ba8,
+  300: #f38ba8,
+  400: #f38ba8,
+  500: #f38ba8,
+  600: #f38ba8,
+  700: #f38ba8,
+  800: #f38ba8,
+  900: #f38ba8,
+
+  contrast: (
+    50: #cdd6f4,
+    100: #cdd6f4,
+    200: #cdd6f4,
+    300: #cdd6f4,
+    400: #cdd6f4,
+    500: #cdd6f4,
+    600: #cdd6f4,
+    700: #cdd6f4,
+    800: #cdd6f4,
+    900: #cdd6f4
+  )
+);
+
+
+$custom-primary: mat.define-palette($base-palette);
+$custom-warm: mat.define-palette($surface-palette);
+$custom-accent: mat.define-palette($base-accent-palette);
+
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warm: $custom-warm
+    )
+  )
+);
+
+@include mat.all-component-themes($custom-theme)

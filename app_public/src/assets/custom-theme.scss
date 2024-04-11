@@ -1,0 +1,45 @@
+@use "@angular/material" as mat;
+
+$custom-primary-palette: (
+  50: green,
+  100: green,
+  200: green,
+  300: green,
+  400: green,
+  500: green,
+  600: green,
+  700: green,
+  800: green,
+  900: green,
+
+  contrast: (
+    50: yellow,
+    100: yellow,
+    200: yellow,
+    300: yellow,
+    400: yellow,
+    500: yellow,
+    600: yellow,
+    700: yellow,
+    800: yellow,
+    900: yellow
+  )
+);
+
+
+
+$custom-primary: mat.define-palette($custom-primary-palette);
+$custom-accent: mat.define-palette(mat.$pink-palette);
+$custom-warm: mat.define-palette(mat.$red-palette);
+
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warm: $custom-warm
+    )
+  )
+);
+
+@include mat.all-component-themes($custom-theme)
