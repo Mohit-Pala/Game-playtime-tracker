@@ -11,7 +11,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CssTesterComponent } from './css-tester/css-tester.component';
-import { ListgamesComponent } from './listgames/listgames.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { ListgamesComponent } from './listgames/listgames.component';
     HomePageComponent,
     NavbarComponent,
     CssTesterComponent,
-    ListgamesComponent
   ],
   imports: [
     BrowserModule,
