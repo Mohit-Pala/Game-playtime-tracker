@@ -1,0 +1,9 @@
+<main>
+  <mat-card>
+    <mat-card-actions>
+      <button class="navbarButtons" mat-raised-button *ngFor="let i of navbarRoutes" (click)="navigate(i.path)">
+        {{i.name}}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</main>
