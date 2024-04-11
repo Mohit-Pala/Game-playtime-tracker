@@ -80,8 +80,9 @@ $base-accent-palette: (
 
 
 $custom-primary: mat.define-palette($base-palette);
-$custom-warm: mat.define-palette($surface-palette);
 $custom-accent: mat.define-palette($base-accent-palette);
+$custom-warm: mat.define-palette($surface-palette);
+
 
 $custom-theme: mat.define-light-theme(
   (

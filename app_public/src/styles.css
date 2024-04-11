@@ -2,3 +2,29 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --base: #1e1e2e;
+  --surface: #313244;
+  --mantle: #181825;
+  --text: #cdd6f4;
+  --subtext: #bac2de;
+
+  background-color: var(--base);
+  color: var(--text);
+}
+
+:root mat-card {
+  background-color: var(--base);
+  color: var(--text);
+}
+
+:root main {
+  background-color: var(--base);
+  color: var(--text);
+}
+
+:root button {
+  background-color: var(--surface);
+  color: var(--subtext);
+}
