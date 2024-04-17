@@ -1,19 +1,88 @@
 <main>
-  <form>
+  <form (ngSubmit)="onSubmit(gameForm)" #gameForm="ngForm">
     <mat-card>
+
       <mat-card-header>
-        <h3>
-          Header
-        </h3>
+        <h1>
+          Add New Game
+        </h1>
       </mat-card-header>
+
       <mat-card-content>
 
+        <section>
+          <mat-form-field>
+            <mat-label for="gameName">
+              Game Name:
+            </mat-label>
+            <input matInput type="text" id="gameName" name="gameName" ngModel>
+          </mat-form-field>
+        </section>
+
+        <section>
+          <mat-form-field>
+            <mat-label for="playtime">
+              Playtime in hours
+            </mat-label>
+            <input matInput type="number" id="playtime" name="playtime" ngModel>
+          </mat-form-field>
+        </section>
+
+        <section>
+            <mat-label for="rating">
+              Rating
+            </mat-label>
+            <mat-slider max="10" min="1">
+              <input matSliderThumb id="rating" name="rating" ngModel>
+            </mat-slider>
+        </section>
+
+
+        <mat-card>
+          <mat-card-header>
+            <h4>
+              File Inputs
+            </h4>
+          </mat-card-header>
+
+          <mat-card-content>
+
+            <section>
+              <mat-form-field>
+                <mat-label for="icon">
+                  Icon URL
+                </mat-label>
+                <input matInput type="text" id="icon" name="icon" ngModel>
+              </mat-form-field>
+            </section>
+
+            <section>
+              <mat-form-field>
+                <mat-label for="banner">
+                  Playtime in hours
+                </mat-label>
+                <input matInput type="text" id="banner" name="banner" ngModel>
+              </mat-form-field>
+            </section>
+
+            <section>
+              <mat-label for="saveFile">
+                Select save file:
+              </mat-label>
+              <input type="file" id="saveFile" name="saveFile" ngModel>
+            </section>
+          </mat-card-content>
+        </mat-card>
+
       </mat-card-content>
+
       <mat-card-actions>
-        <button mat-raised-button type="submit">
-          Submit
-        </button>
+        <section>
+          <button mat-raised-button type="submit">Confirm and add game</button>
+        </section>
       </mat-card-actions>
     </mat-card>
+
   </form>
+
 </main>

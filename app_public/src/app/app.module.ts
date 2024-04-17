@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 // material stuff
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +30,10 @@ import { AddNewGameComponent } from './components-game/add-new-game/add-new-game
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
   ],
   providers: [
     provideAnimationsAsync()

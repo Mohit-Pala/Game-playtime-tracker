@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-:root {
+/* :root {
   --base: #1e1e2e;
   --surface: #313244;
   --mantle: #181825;
@@ -14,7 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: var(--text);
 }
 
-/* :root mat-card {
+:root mat-card {
   background-color: var(--base);
   color: var(--text);
 }

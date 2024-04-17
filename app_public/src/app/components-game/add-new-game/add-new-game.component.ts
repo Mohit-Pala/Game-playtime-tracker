@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Form } from '@angular/forms';
 
 @Component({
   selector: 'app-add-new-game',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AddNewGameComponent {
 
+  iconSrc?: File
+  bannerSrc?:File
+  iconPreview = "../../../favicon.ico"
+  bannerPreview = "../../../favicon.ico"
+
+  onSubmit(form: Form) {
+    console.log(form)
+  }
 }
