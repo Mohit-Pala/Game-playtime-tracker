@@ -1,0 +1,39 @@
+<main>
+  <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+    <mat-card>
+
+      <mat-card-header>
+        <h1>
+          Login
+        </h1>
+      </mat-card-header>
+
+      <mat-card-content>
+        <section>
+          <mat-form-field>
+            <mat-label for="username">
+              Username:
+            </mat-label>
+            <input matInput type="text" id="username" name="username" ngModel>
+          </mat-form-field>
+        </section>
+
+        <section>
+          <mat-form-field>
+            <mat-label for="pass">
+              Password:
+            </mat-label>
+            <input matInput type="password" id="pass" name="pass" ngModel>
+          </mat-form-field>
+        </section>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <section>
+          <button mat-raised-button type="submit">Login</button>
+        </section>
+      </mat-card-actions>
+    </mat-card>
+
+  </form>
+</main>

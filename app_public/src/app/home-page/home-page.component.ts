@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -11,4 +12,14 @@ export class HomePageComponent {
   username = 'username'
   numOfGames = 3
   totalHoursPlayed = this.numOfGames * 15
+
+  constructor(private router: Router) {}
+
+  navigateLogin() {
+    this.router.navigate(['auth/login']);
+  }
+
+  navigateSignup() {
+    this.router.navigate(['auth/signup']);
+  }
 }
