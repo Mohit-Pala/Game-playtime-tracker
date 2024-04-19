@@ -17,6 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CssTesterComponent } from './css-tester/css-tester.component';
 import { AddNewGameComponent } from './components-game/add-new-game/add-new-game.component';
 import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './auth/login/login.component';
     CssTesterComponent,
     AddNewGameComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
