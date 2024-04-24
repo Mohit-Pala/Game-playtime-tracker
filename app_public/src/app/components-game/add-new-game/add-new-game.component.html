@@ -49,25 +49,33 @@
 
             <section>
                 <mat-label for="icon">
-                  Icon URL
+                  Icon Image, 1:1 aspect ratio
                 </mat-label>
-                <input type="file" id="icon" name="icon" ngModel>
+                <input type="file" id="icon" name="icon" (change)="getIcon($event)" ngModel>
+                <br>
+                <img [src]="base64Icon" height="20px" width="20px">
             </section>
 
             <section>
                 <mat-label for="banner">
-                  Playtime in hours
+                  Banner Image, 16:9 aspect ratio
                 </mat-label>
-                <input type="file" id="banner" name="banner" ngModel>
+                <input type="file" id="banner" name="banner" (change)="getBanner($event)" ngModel>
+                <br>
+                <img [src]="base64Banner" height="180" width="320">
             </section>
 
             <section>
               <mat-label for="saveFile">
                 Select save file:
               </mat-label>
-              <input type="file" id="saveFile" name="saveFile" ngModel>
+              <input type="file" id="saveFile" name="saveFile" (change)="getSaveFile($event)" ngModel>
             </section>
           </mat-card-content>
+
+          <mat-card-actions>
+            <button mat-button type="button" (click)="updateAll()">preview images</button>
+          </mat-card-actions>
         </mat-card>
 
       </mat-card-content>
@@ -75,6 +83,9 @@
       <mat-card-actions>
         <section>
           <button mat-raised-button type="submit">Confirm and add game</button>
+        </section>
+        <section>
+          <button mat-raised-button type="reset">Clear all</button>
         </section>
       </mat-card-actions>
     </mat-card>
