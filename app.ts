@@ -3,9 +3,6 @@ import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-
-import indexRouter from './app_server/routes/index';
-
 import gameRouter from './app_api/routes/game.routes'
 require('./app_api/models/db');
 
@@ -17,11 +14,23 @@ app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(function(req: Request, res: Response, next: NextFunction) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+})
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
 app.use('/api/game', gameRouter);
 
 // catch 404 and forward to error handler

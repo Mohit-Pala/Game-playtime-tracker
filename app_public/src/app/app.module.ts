@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // material stuff
 import { MatCardModule } from '@angular/material/card';
@@ -24,10 +25,11 @@ import { AddNewGameComponent } from './components-game/add-new-game/add-new-game
     NavbarComponent,
     CssTesterComponent,
     AddNewGameComponent,
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatCardModule,
     MatButtonModule,
     FormsModule,
