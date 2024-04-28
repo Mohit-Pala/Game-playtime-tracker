@@ -1,19 +1,19 @@
 export default interface Game {
-    id: String;
-    name: String;
+    id: string;
+    name: string;
     playtime: Number;
-    rating: String;
-    icon: String;
-    banner: String;
-    saveFile: String;
+    rating: string;
+    icon: string;
+    banner: string;
+    saveFile: string;
 }
 
 export interface IGame {
-    _id: String;
-    name: String;
+    _id: string;
+    name: string;
     playtime: Number;
-    rating: String;
-    icon: String;
-    banner: String;
-    saveFile: String;
+    rating: string;
+    icon: string;
+    banner: string;
+    saveFile: string;
 }

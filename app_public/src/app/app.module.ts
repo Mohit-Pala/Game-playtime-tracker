@@ -18,6 +18,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CssTesterComponent } from './css-tester/css-tester.component';
 import { AddNewGameComponent } from './components-game/add-new-game/add-new-game.component';
 import { ListGamesComponent } from './components-game/list-games/list-games.component';
+import { GameComponent } from './components-game/game/game.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ListGamesComponent } from './components-game/list-games/list-games.comp
     CssTesterComponent,
     AddNewGameComponent,
     ListGamesComponent,
+    GameComponent,
     ],
   imports: [
     BrowserModule,

@@ -1,0 +1,83 @@
+<main>
+  <mat-card>
+
+    <mat-card-header>
+      <h1>
+        {{game?.name}}
+      </h1>
+    </mat-card-header>
+
+    <!-- If in not edit mode, freeze everything -->
+    <mat-card-content *ngIf="!editMode">
+
+      <img class="icon" src="{{game?.icon}}">
+
+      <h3>
+        {{game?.playtime}} hours played
+      </h3>
+
+      <h3>
+        {{game?.rating}} stars
+      </h3>
+
+      <img class="banner" src="{{game?.banner}}">
+
+    </mat-card-content>
+
+    <!-- If in edit mode -->
+    <mat-card-content class="editModeStuff" *ngIf="editMode">
+      <form (ngSubmit)="updateGame(gameForm)" #gameForm="ngForm">
+
+        <section>
+          <mat-form-field>
+            <mat-label>
+              Game Name:
+            </mat-label>
+            <input matInput type="text" placeholder="Skyrim" id="name" name="name" [(ngModel)]="game!.name">
+          </mat-form-field>
+        </section>
+
+        <section>
+          <mat-form-field>
+            <mat-label>
+              Playtime in hours
+            </mat-label>
+            <input matInput type="number" placeholder="200" id="playtime" name="playtime" [(ngModel)]="game!.playtime">
+          </mat-form-field>
+        </section>
+
+        <section>
+          <mat-label>
+            Rating:
+          </mat-label>
+          <mat-slider max="10" min="1" showTickMarks="true" discrete="true">
+            <input matSliderThumb id="rating" name="rating" [(ngModel)]="game!.rating">
+          </mat-slider>
+        </section>
+
+        <section>
+          <button mat-raised-button type="submit">Confirm and update game</button>
+        </section>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button *ngIf="!editMode" (click)="toggleEditMode()">
+        Edit Mode
+      </button>
+
+      <button mat-raised-button *ngIf="editMode" (click)="toggleEditMode()">
+        Cancel Edit Mode
+      </button>
+
+      <button mat-raised-button (click)="back()">
+        Back to list
+      </button>
+
+      <button mat-raised-button (click)="deleteGame()">
+        Delete
+      </button>
+
+    </mat-card-actions>
+  </mat-card>
+</main>
