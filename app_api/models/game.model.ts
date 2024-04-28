@@ -23,8 +23,7 @@ const gameSchema: Schema = new Schema({
     rating: Number,
     icon: String,
     banner: String,
-    svaeFile: String
-    
+    saveFile: String
 })
 
 export default model<IGame>('Game', gameSchema);
