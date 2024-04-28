@@ -1,0 +1,27 @@
+<main>
+  <section *ngFor="let game of listOfGames">
+    <mat-card>
+      <mat-card-header>
+        {{game.id}}
+      </mat-card-header>
+
+      <mat-card-content>
+        <h3>
+          Name: {{game.name}}
+        </h3>
+        <p>
+          Playtime: {{game.playtime}} Hours
+        </p>
+        <p>
+          Rating: {{game.rating}} Stars
+        </p>
+        <img height="20px" width="20px" src="{{game.icon}}">
+        <img height="180px" width="320px" src="{{game.banner}}">        
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="accent" [routerLink]="'/game/' + game.id">Edit Game</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</main>

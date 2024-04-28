@@ -35,7 +35,7 @@ export default class GameService {
   }
 
   getGames(): void {
-    this.http.get<IGame[]>(this.API_URL + "cat").subscribe((igames: IGame[]) => {
+    this.http.get<IGame[]>(this.API_URL + "game").subscribe((igames: IGame[]) => {
       this.games = [];
       igames.forEach((igame: IGame) => {
         this.games.push({
@@ -90,15 +90,15 @@ export default class GameService {
     return this.http.delete<{ message: string }>(this.API_URL + 'game/' + id);
   }
 
-  getCurrentCat(): Game | undefined {
+  getCurrentGame(): Game | undefined {
     return this.currentGame;
   }
 
-  getCurrentCatListener(): Observable<Game | undefined> {
+  getCurrentGameListener(): Observable<Game | undefined> {
     return this.currentGameListener.asObservable();
   }
 
-  getCatListener(): Observable<Game[]> {
+  getGameListener(): Observable<Game[]> {
     return this.gameListener.asObservable();
   }
 }

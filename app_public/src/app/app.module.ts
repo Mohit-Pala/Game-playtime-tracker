@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CssTesterComponent } from './css-tester/css-tester.component';
 import { AddNewGameComponent } from './components-game/add-new-game/add-new-game.component';
+import { ListGamesComponent } from './components-game/list-games/list-games.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddNewGameComponent } from './components-game/add-new-game/add-new-game
     NavbarComponent,
     CssTesterComponent,
     AddNewGameComponent,
+    ListGamesComponent,
     ],
   imports: [
     BrowserModule,
