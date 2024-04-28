@@ -11,7 +11,6 @@ export class NavbarComponent {
 
   navbarRoutes = [
     {path:'/', name:'Home'},
-    {path:'css', name: 'Css Tester'},
     {path:'add', name: 'Add Game'},
     {path:'list',name: 'List of Games'}
   ]

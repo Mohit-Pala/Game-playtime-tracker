@@ -108,6 +108,6 @@ export class AddNewGameComponent {
       banner: this.HARDCODED_BANNER,
       saveFile: this.HARDCODED_SAVE
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['/list']);
   }
 }

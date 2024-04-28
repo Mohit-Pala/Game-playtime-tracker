@@ -3,29 +3,33 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* :root {
+:root {
   --base: #1e1e2e;
   --surface: #313244;
   --mantle: #181825;
   --text: #cdd6f4;
   --subtext: #bac2de;
 
-  background-color: var(--base);
+  background-color: var(--mantle);
   color: var(--text);
 }
 
 :root mat-card {
+  margin: 2rem;
   background-color: var(--base);
   color: var(--text);
+  border: solid;
+  border-color: #f38ba8;
 }
 
 :root main {
-  background-color: var(--base);
+  background-color: var(--mantle);
   color: var(--text);
 }
 
 :root button {
+  width: 100%;
   background-color: var(--base);
   color: var(--subtext);
+  margin: 0.5rem;
 }
- */

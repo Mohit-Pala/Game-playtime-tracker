@@ -8,9 +8,9 @@
     </mat-card-header>
 
     <!-- If in not edit mode, freeze everything -->
-    <mat-card-content *ngIf="!editMode">
+    <mat-card-content *ngIf="!editMode" class="notEditMode">
 
-      <img class="icon" src="{{game?.icon}}">
+      <img class="icon" src="{{game?.icon}}" height="100px" width="100px">
 
       <h3>
         {{game?.playtime}} hours played
@@ -20,7 +20,7 @@
         {{game?.rating}} stars
       </h3>
 
-      <img class="banner" src="{{game?.banner}}">
+      <img class="banner" src="{{game?.banner}}" height="270px" width="480px">
 
     </mat-card-content>
 
@@ -50,31 +50,31 @@
           <mat-label>
             Rating:
           </mat-label>
-          <mat-slider max="10" min="1" showTickMarks="true" discrete="true">
+          <mat-slider max="10" min="1" showTickMarks="true" discrete="true" class="my-slider">
             <input matSliderThumb id="rating" name="rating" [(ngModel)]="game!.rating">
           </mat-slider>
         </section>
 
         <section>
-          <button mat-raised-button type="submit">Confirm and update game</button>
+          <button mat-raised-button color="accent" type="submit">Confirm and update game</button>
         </section>
       </form>
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button *ngIf="!editMode" (click)="toggleEditMode()">
+      <button mat-raised-button color="accent" *ngIf="!editMode" (click)="toggleEditMode()">
         Edit Mode
       </button>
 
-      <button mat-raised-button *ngIf="editMode" (click)="toggleEditMode()">
+      <button mat-raised-button color="accent" *ngIf="editMode" (click)="toggleEditMode()">
         Cancel Edit Mode
       </button>
 
-      <button mat-raised-button (click)="back()">
+      <button mat-raised-button color="accent" (click)="back()">
         Back to list
       </button>
 
-      <button mat-raised-button (click)="deleteGame()">
+      <button mat-raised-button color="accent" (click)="deleteGame()">
         Delete
       </button>
 
