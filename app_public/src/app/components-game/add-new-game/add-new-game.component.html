@@ -53,7 +53,7 @@
                 </mat-label>
                 <input type="file" id="icon" name="icon" (change)="getIcon($event)" ngModel>
                 <br>
-                <img [src]="base64Icon" height="20px" width="20px">
+                <img [src]="base64Icon" height="50px" width="50px">
             </section>
 
             <section>
@@ -95,4 +95,14 @@
 
   </form>
 
+  <mat-card>
+    <mat-card-content *ngIf="false">
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="addSampleGame()">
+        Add Sample Hardcoded Game
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </main>
