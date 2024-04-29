@@ -5,14 +5,17 @@ import { CssTesterComponent } from './css-tester/css-tester.component';
 import { AddNewGameComponent } from './components-game/add-new-game/add-new-game.component';
 import { ListGamesComponent } from './components-game/list-games/list-games.component';
 import { GameComponent } from './components-game/game/game.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
   {path: '', component:HomePageComponent},
   {path: 'css', component:CssTesterComponent},
   {path: 'add', component:AddNewGameComponent},
   {path: 'list', component:ListGamesComponent},
-  {path: "game/:id", component:GameComponent},
-
+  {path: 'game/:id', component:GameComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'register', component:RegisterComponent}
 ];
 
 @NgModule({

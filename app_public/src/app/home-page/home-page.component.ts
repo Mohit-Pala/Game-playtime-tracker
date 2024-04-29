@@ -16,10 +16,10 @@ export class HomePageComponent {
   constructor(private router: Router) {}
 
   navigateLogin() {
-    this.router.navigate(['auth/login']);
+    this.router.navigate(['login']);
   }
 
   navigateSignup() {
-    this.router.navigate(['auth/signup']);
+    this.router.navigate(['register']);
   }
 }
