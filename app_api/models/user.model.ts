@@ -6,8 +6,8 @@ export interface IUser extends Document {
     uName: string,
     hash: string,
     salt: string,
-    setPass: (password: string) => void,
-    checkPass: (password: string) => boolean,
+    setpasswd: (passwd: string) => void,
+    checkpasswd: (passwd: string) => boolean,
     genJwt: () => Jwt
 }
 
@@ -21,13 +21,13 @@ const userSchema = new mongoose.Schema({
     salt: String
 })
 
-userSchema.methods.setPass = function (password: string) {
+userSchema.methods.setpasswd = function (passwd: string) {
     this.salt = crypto.randomBytes(16).toString('hex')
-    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex')
+    this.hash = crypto.pbkdf2Sync(passwd, this.salt, 1000, 64, 'sha512').toString('hex')
 }
 
-userSchema.methods.checkPass = function (password: string) {
-    const hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex')
+userSchema.methods.checkpasswd = function (passwd: string) {
+    const hash = crypto.pbkdf2Sync(passwd, this.salt, 1000, 64, 'sha512').toString('hex')
     if(this.hash === hash) {
         return true
     }
