@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-const connectString = 'mongodb://localhost:27017/videoGamePlayimeTracker'
+const connectString = 'mongodb+srv://palav:8GVGALHQFlow0JCB@cluster0.xsju9zp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
 
 mongoose.connect(connectString);
 
