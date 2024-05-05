@@ -1,7 +1,7 @@
 export default interface Game {
     id: string;
     name: string;
-    playtime: Number;
+    playtime: number;
     rating: string;
     icon: string;
     banner: string;
@@ -11,7 +11,7 @@ export default interface Game {
 export interface IGame {
     _id: string;
     name: string;
-    playtime: Number;
+    playtime: number;
     rating: string;
     icon: string;
     banner: string;

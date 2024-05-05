@@ -1,4 +1,14 @@
 <main>
+  <section *ngIf="showMessage">
+    <mat-card>
+      <mat-card-content>
+        <p>
+          You have no games added, add more games to view them here
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
   <section *ngFor="let game of listOfGames">
     <mat-card>
       <mat-card-header>

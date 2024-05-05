@@ -33,6 +33,6 @@ export class RegisterComponent implements OnInit{
       user: {uName: form.value.uname},
       password: form.value.password
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['/list']);
   }
 }

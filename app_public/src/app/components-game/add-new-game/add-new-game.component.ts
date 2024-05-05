@@ -95,7 +95,7 @@ export class AddNewGameComponent {
       banner: this.base64Banner,
       saveFile: this.base64SaveFile
     });
-    this.router.navigate(['/list']);
+    this.router.navigate(['/']);
   }
 
   addSampleGame() {
@@ -108,6 +108,6 @@ export class AddNewGameComponent {
       banner: this.HARDCODED_BANNER,
       saveFile: this.HARDCODED_SAVE
     });
-    this.router.navigate(['/list']);
+    this.router.navigate(['/']);
   }
 }

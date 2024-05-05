@@ -47,4 +47,6 @@ export class GameComponent implements OnInit {
   toggleEditMode(): void {
     this.editMode = !this.editMode
   }
+
+
 }

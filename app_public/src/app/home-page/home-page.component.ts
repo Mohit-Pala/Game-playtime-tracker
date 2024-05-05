@@ -12,8 +12,8 @@ export class HomePageComponent implements OnInit{
   // placeholders, update later
   loggedIn: boolean = false // update on ng init
   username = ''
-  numOfGames = 3
-  totalHoursPlayed = this.numOfGames * 15
+  numOfGames = '0'
+  totalHoursPlayed = '0'
 
   constructor(
     private router: Router,
@@ -29,6 +29,16 @@ export class HomePageComponent implements OnInit{
     else {
       this.loggedIn = false
     }
+
+    let tmp = localStorage.getItem('numGames')
+    if(tmp !== null) {
+      this.numOfGames = tmp
+    }
+    tmp = localStorage.getItem('totalPlaytime')
+    if(tmp !== null) {
+      this.totalHoursPlayed = tmp
+    }
+
   }
 
   navigateLogin() {
