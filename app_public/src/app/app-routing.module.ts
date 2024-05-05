@@ -7,6 +7,7 @@ import { ListGamesComponent } from './components-game/list-games/list-games.comp
 import { GameComponent } from './components-game/game/game.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   {path: '', component:HomePageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'list', component:ListGamesComponent},
   {path: 'game/:id', component:GameComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent}
+  {path: 'register', component:RegisterComponent},
+  {path: 'nav', component:NavbarComponent}
 ];
 
 @NgModule({

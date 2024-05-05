@@ -15,6 +15,8 @@ export class AuthService {
   user: User | null = null;
   userListerner: Subject<User | null> = new Subject();
 
+  storageSub = new Subject<string>();
+
   constructor(private http: HttpClient) { }
 
   register({ user, password }: { user: User, password: string }) {
@@ -72,9 +74,9 @@ export class AuthService {
     if (token) {
       const tokenPayload = JSON.parse(atob(token.split('.')[1]));
       // JWT expiration date is in seconds
-      const expirationDate = new Date(tokenPayload.exp);
+      const expirationDate = new Date(tokenPayload.exp)
       if (new Date().getTime() > expirationDate.getTime()) {
-        this.retrieveUser(tokenPayload.email);
+        this.retrieveUser(tokenPayload.email)
       }
     }
   }
@@ -83,15 +85,28 @@ export class AuthService {
     this.http.get<User | null>(this.API_URL + uName)
       .subscribe((user: User | null) => {
         if (user) {
-          this.user = user;
-          this.userListerner.next(user);
+          this.user = user
+          this.userListerner.next(user)
         }
       });
   }
 
   logout() {
-    localStorage.removeItem(this.TOKEN_KEY);
-    this.user = null;
-    this.userListerner.next(null);
-  }  
+    localStorage.removeItem(this.TOKEN_KEY)
+    this.user = null
+    this.userListerner.next(null)
+  } 
+
+  update() {
+    this.storageSub.next('changed')
+  }
+
+  reset() {
+    this.storageSub.next('')
+    sessionStorage.clear()
+  }
+
+  watchStorageChanges() {
+    return this.storageSub.asObservable()
+  }
 }

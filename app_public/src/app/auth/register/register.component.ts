@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'app-register',
@@ -25,9 +26,13 @@ export class RegisterComponent implements OnInit{
   }
 
   submitForm(form: NgForm) {
+
+    sessionStorage.setItem('status', 'in')
+    this.authService.update()
     this.authService.register({
       user: {uName: form.value.uname},
       password: form.value.password
     });
+    this.router.navigate(['/']);
   }
 }

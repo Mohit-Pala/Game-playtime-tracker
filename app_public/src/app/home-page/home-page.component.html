@@ -52,8 +52,11 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="accent">
+      <button mat-raised-button color="accent" (click)="navigateList()">
         View all games
+      </button>
+      <button mat-raised-button color="accent" (click)="logout()">
+        Logout
       </button>
     </mat-card-actions>
   </mat-card>

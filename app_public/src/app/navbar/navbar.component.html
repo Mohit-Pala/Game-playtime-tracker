@@ -1,7 +1,15 @@
 <main>
-  <mat-card>
+  <mat-card *ngIf="!loggedIn">
     <mat-card-actions>
       <button class="navbarButtons" mat-raised-button color="accent" *ngFor="let i of navbarRoutes" (click)="navigate(i.path)">
+        {{i.name}}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngIf="loggedIn">
+    <mat-card-actions>
+      <button class="navbarButtons" mat-raised-button color="accent" *ngFor="let i of navbarRoutesIN" (click)="navigate(i.path)">
         {{i.name}}
       </button>
     </mat-card-actions>

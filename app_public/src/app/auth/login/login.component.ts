@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit{
   }
 
   submitForm(form: NgForm) {
+
+    sessionStorage.setItem('status', 'in')
+    this.authService.update()
     this.authService.login({
       uName: form.value.uname,
       password: form.value.password
